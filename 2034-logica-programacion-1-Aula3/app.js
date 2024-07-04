@@ -3,9 +3,10 @@ let numeroSecreto = 4;
 let numeroUsuario = 0;
 let intentos = 1;
 let palabraVeces = 'vez';
+let maxIntentos = 3; // Número máximo de intentos
 
-while (numeroUsuario != numeroSecreto) {
-    numeroUsuario = prompt("Me indicas un número entre 1 y 10 por favor:");
+while (numeroUsuario !== numeroSecreto && intentos <= maxIntentos) {
+    numeroUsuario = parseInt(prompt("Me indicas un número entre 1 y 10 por favor:"));
 
     console.log(numeroUsuario);
     if (numeroUsuario == numeroSecreto) {
@@ -23,4 +24,6 @@ while (numeroUsuario != numeroSecreto) {
         //La condición no se cumplió
         //alert('Lo siento, no acertaste el número');
     }
+}if (intentos > maxIntentos) {
+    alert(`Lo siento, has superado el número máximo de intentos. El número secreto era: ${numeroSecreto}.`);
 }
